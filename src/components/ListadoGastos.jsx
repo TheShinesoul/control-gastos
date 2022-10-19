@@ -1,4 +1,5 @@
 import React from 'react'
+import { generarId } from '../helpers'
 import Gasto from './Gasto'
 
 const ListadoGastos = ({gastos}) =>{
@@ -8,7 +9,10 @@ const ListadoGastos = ({gastos}) =>{
             <h2>{gastos.length ? 'Gastos' : 'No hay gastos aún'}</h2>
             {
                 gastos.map(gasto => (
-                    <Gasto/>
+                    <Gasto
+                        key = {generarId()}
+                        gasto = {gasto}
+                    />
                 ))
             }
         </div>
