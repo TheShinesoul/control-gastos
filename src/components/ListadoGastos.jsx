@@ -2,7 +2,7 @@ import React from 'react'
 import { generarId } from '../helpers'
 import Gasto from './Gasto'
 
-const ListadoGastos = ({gastos}) =>{
+const ListadoGastos = ({gastos, setGastoEditar,eliminarGasto}) =>{
     return (
         <div className='listado-gastos contenedor'>
             
@@ -12,6 +12,8 @@ const ListadoGastos = ({gastos}) =>{
                     <Gasto
                         key = {generarId()}
                         gasto = {gasto}
+                        setGastoEditar={setGastoEditar}
+                        eliminarGasto = {eliminarGasto}
                     />
                 ))
             }
